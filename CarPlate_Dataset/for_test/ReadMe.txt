@@ -1,0 +1,1 @@
+"strings" folder contains license plate number for each image in the "images" folder.
