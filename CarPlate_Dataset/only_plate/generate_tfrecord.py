@@ -123,6 +123,12 @@ FLAGS = flags.FLAGS
         None
 """
 
+def zero245(data):
+    if data==0:
+        return 45
+    else:
+        return data
+
 def split(df, group):
     data = namedtuple('data', ['filename', 'object'])
     gb = df.groupby(group)
@@ -150,8 +156,8 @@ def create_tf_example(group, path):
         xmaxs.append(row['xmax'] / width)
         ymins.append(row['ymin'] / height)
         ymaxs.append(row['ymax'] / height)
-        classes_text.append(str(row['class']).encode('utf8'))
-        classes.append((row['class']))
+        classes_text.append(str(zero245(row['class'])).encode('utf8'))
+        classes.append(zero245(row['class']))
 
     #print('classes_test', classes_text)
     #print('classes', classes)
